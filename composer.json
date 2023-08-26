@@ -1,0 +1,16 @@
+{
+    "name": "airowl/rest-api",
+    "description": "PHP MySQL Food API",
+    "authors": [
+        {
+            "name": "Airowl",
+            "email": "airowl.gasga@gmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": { 
+            "App\\": "app/",
+            "Core\\": "core/"
+        }
+    }
+}
