@@ -30,6 +30,19 @@ class Router
         $this->routes['POST'][$uri] = $controller;
     }
 
+    public function patch($uri, $controller)
+    {
+        $uri = Request::clearUri($uri);
+        $this->routes['PATCH'][$uri] = $controller;
+    }
+
+    public function delete($uri, $controller)
+    {
+
+        $uri = Request::clearUri($uri);
+        $this->routes['DELETE'][$uri] = $controller;
+    }
+
     /**
      * define routes
      *
