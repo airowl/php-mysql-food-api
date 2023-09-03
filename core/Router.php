@@ -22,6 +22,7 @@ class Router
 
     public function get($uri, $controller)
     {
+        $uri = Request::clearUri($uri);
         $this->routes['GET'][$uri] = $controller;
     }
 
