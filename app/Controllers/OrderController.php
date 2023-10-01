@@ -9,14 +9,14 @@ class OrderController
 {
     public function index()
     {
-        $orders = App::get('database')->getAll('order');
-
-        return responseJson(json_encode($orders));
+        $orders = App::get('database')->getAll('orders');
+        return view('index', ['orders' => $orders]);
     }
 
     public function show()
     {
-        $order = App::get('database')->getOne('order', 'id', $_GET['id']);
+
+        $order = App::get('database')->getOne('orders', 'id', Request::getParam());
 
         return responseJson(json_encode($order));
     }
@@ -28,7 +28,7 @@ class OrderController
             'shipping_country' => $_GET['country'],
         );
 
-        $res = App::get('database')->insert('order', $params);
+        $res = App::get('database')->insert('orders', $params);
 
         return responseJson(json_encode($res));
     }
@@ -38,7 +38,7 @@ class OrderController
 
         $params = $_GET;
 
-        $res = App::get('database')->update('order', $params, 'id', Request::getParam());
+        $res = App::get('database')->update('orders', $params, 'id', Request::getParam());
 
         return responseJson(json_encode($res));
     }
@@ -46,7 +46,7 @@ class OrderController
     public function delete()
     {
 
-        $res = App::get('database')->delete('order', 'id', Request::getParam());
+        $res = App::get('database')->delete('orders', 'id', Request::getParam());
 
         return responseJson(json_encode($res));
     }

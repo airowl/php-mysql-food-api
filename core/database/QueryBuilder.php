@@ -31,9 +31,9 @@ class QueryBuilder
     public function getAll($table)
     {
         $statement = $this->pdo->prepare("select * from {$table}");
-
+        
         $statement->execute();
-
+        
         return $statement->fetchAll(PDO::FETCH_CLASS);
     }
 
@@ -110,9 +110,22 @@ class QueryBuilder
 
         $statement->bindParam("{$column}", $value);
         try {
-
             $statement->execute();
             return true;
+        } catch (\Exception $e) {
+            die($e->getMessage());
+        }
+    }
+
+    public function leftJoin($firstTable, $secondTable, $firstColumn, $secondColumn)
+    {
+        $sql = "SELECT * FROM {$firstTable} LEFT JOIN {$secondTable} ON {$firstTable}.{$firstColumn} = {$secondTable}.{$secondColumn}";
+
+        $statement = $this->pdo->prepare($sql);
+
+        try {
+            $statement->execute();
+            return $statement->fetchAll(PDO::FETCH_CLASS);
         } catch (\Exception $e) {
             die($e->getMessage());
         }
