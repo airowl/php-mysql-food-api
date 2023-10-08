@@ -5,7 +5,7 @@
         'type' => 'library',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
-        'reference' => '7f0307c9b9204e65fe6de7aa6325357c0b1d9371',
+        'reference' => '402d0deffa9dfe267b8b7a287073939537ef2f99',
         'name' => 'airowl/rest-api',
         'dev' => true,
     ),
@@ -16,7 +16,7 @@
             'type' => 'library',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
-            'reference' => '7f0307c9b9204e65fe6de7aa6325357c0b1d9371',
+            'reference' => '402d0deffa9dfe267b8b7a287073939537ef2f99',
             'dev_requirement' => false,
         ),
         'symfony/polyfill-ctype' => array(

@@ -19,3 +19,4 @@ $router->post('order', 'OrderController@create');
 $router->patch('order/{id}', 'OrderController@update');
 $router->delete('order/{id}', 'OrderController@delete');
 
+$router->get('fullOrders', 'OrderController@fullOrders');

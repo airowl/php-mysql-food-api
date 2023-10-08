@@ -2,6 +2,7 @@
 
 namespace Core\Database;
 
+use Exception;
 use PDO;
 
 class QueryBuilder
@@ -12,6 +13,7 @@ class QueryBuilder
      * @var PDO
      */
     protected $pdo;
+    protected $statement;
 
     /**
      * Create a new QueryBuilder instance.
