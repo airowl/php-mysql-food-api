@@ -59,13 +59,20 @@ class OrderController
 
     public function create()
     {
+        $res = (object)[];
         // da aggiornare
         $params = array(
             'date' => $_GET['date'],
             'shipping_country' => $_GET['country'],
         );
 
-        $res = App::get('database')->insert('orders', $params);
+        $order = App::get('database')->insert('orders', $params);
+        $res = $order;
+
+        $productIds = array($_GET['productIds']);
+
+        var_dump($res);exit;
+        exit;
 
         return responseJson(json_encode($res));
     }

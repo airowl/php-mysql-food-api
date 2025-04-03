@@ -71,7 +71,7 @@ class QueryBuilder
             }
 
             $statement->execute($parameters);
-            return true;
+            return $statement->lastInsertId();
         } catch (\Exception $e) {
             die($e->getMessage());
         }
